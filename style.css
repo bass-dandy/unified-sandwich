@@ -1,0 +1,347 @@
+* {
+	color: black;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-size: 10px;
+}
+
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+section .section-content {
+	display: flex;
+	max-width: 1000px;
+}
+
+section .col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+}
+
+section .col:first-child .picture-frame {
+	align-self: flex-start;
+}
+
+section .col:last-child .picture-frame {
+	align-self: flex-end;
+}
+
+section .picture-frame {
+	height: 400px;
+	width: 400px;
+	border: 1px solid black;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+}
+
+section .picture-frame-content {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	opacity: 0;
+	transition: opacity 0.75s 0.5s ease-out;
+}
+
+section.in .picture-frame, 
+section.in .picture-frame-content {
+	opacity: 1;
+}
+
+section h2, section h3, section p {
+	margin: 0;
+	font-family: 'Nanum Myeongjo';
+	font-weight: normal;
+	opacity: 0;
+}
+
+section.in h2, section.in h3, section.in p {
+	opacity: 1;
+}
+
+section h2 {
+	font-size: 3rem;
+	font-weight: bold;
+	transition: opacity 1s ease-out;
+}
+
+section h3 {
+	font-style: italic;
+	padding-bottom: 2px;
+	font-size: 1.6rem;
+	transition: opacity 1s ease-out;
+}
+
+.underline {
+	width: 0%;
+	border-bottom: 1px solid black;
+	transition: width 1.25s ease-out;
+}
+
+section.in .underline {
+	width: 100%;
+}
+
+section p {
+	margin-top: 10px;
+	font-size: 1.6rem;
+	text-align: justify;
+	transition: opacity 0.75s 0.5s ease-out;
+}
+
+/************************/
+/* Structure ************/
+/************************/
+
+#structure {
+	background-color: #ffeadb;
+}
+
+/************************/
+/* Composition **********/
+/************************/
+
+#composition {
+	background-color: #ffbaba;
+}
+
+#composition .layer1 {
+	position: absolute;
+	top: 10%;
+	left: 25%;
+	height: 80%;
+	width: 50%;
+}
+
+#composition img {
+	flex-basis: 62.5%;
+	opacity: 0;
+	transition: opacity 0.5s 2.1s ease-out;
+}
+
+#composition.in img {
+	opacity: 1;
+}
+
+#composition .layer1,
+#composition .layer2,
+#composition .layer3,
+#composition .layer4,
+#composition .layer5,
+#composition .layer6,
+#composition .layer7,
+#composition .layer8 {
+	display: flex;
+	flex-basis: 37.5%;
+	justify-content: flex-end;
+	border: 1px solid black;
+	margin: -1px;
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+}
+
+#composition .layer1,
+#composition .layer3,
+#composition .layer5,
+#composition .layer7 {
+	flex-direction: column;
+}
+
+#composition .layer2 {
+	transition-delay: 0.7s;
+}
+
+#composition .layer3 {
+	transition-delay: 0.9s;
+}
+
+#composition .layer4 {
+	transition-delay: 1.1s;
+}
+
+#composition .layer5 {
+	transition-delay: 1.3s;
+}
+
+#composition .layer6 {
+	transition-delay: 1.5s;
+}
+
+#composition .layer7 {
+	transition-delay: 1.7s;
+}
+
+#composition .layer8 {
+	transition-delay: 1.9s;
+}
+
+#composition.in .layer1,
+#composition.in .layer2,
+#composition.in .layer3,
+#composition.in .layer4,
+#composition.in .layer5,
+#composition.in .layer6,
+#composition.in .layer7,
+#composition.in .layer8 {
+	opacity: 1;
+}
+
+/************************/
+/* Geometry *************/
+/************************/
+
+#geometry {
+	background-color: #678a74;
+}
+
+#geometry img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+#geometry .layer1, #geometry .layer2 {
+	opacity: 1;
+	transition: opacity 2s 1.25s ease-out;
+}
+
+#geometry.in .layer1, #geometry.in .layer2 {
+	opacity: 0;
+}
+
+#geometry.in .layer3 {
+	transform: translateY(-20%);
+	transition: transform 2s 1.25s ease-in-out;
+}
+
+#geometry .layer4 {
+	opacity: 0;
+	transition: opacity 2s 1.25s ease-in;
+}
+
+#geometry.in .layer4 {
+	opacity: 1;
+}
+
+/************************/
+/* Temporality **********/
+/************************/
+
+#temporality {
+	background-color: #ffeadb;
+}
+
+#temporality img {
+	position: absolute;
+}
+
+#temporality .layer1,
+#temporality .layer2,
+#temporality .layer3 {
+	width: 100%;
+	height: 100%;
+}
+
+#temporality .layer2,
+#temporality .layer3 {
+	opacity: 0;
+	transition: opacity 0.75s ease-out;
+}
+
+#temporality .layer2 {
+	transition-delay: 1.25s;
+}
+
+#temporality .layer3 {
+	transition-delay: 2s;
+}
+
+#temporality.in .layer2,
+#temporality.in .layer3 {
+	opacity: 1;
+}
+
+#temporality .layer4,
+#temporality .layer5 {
+	height: 100%;
+	width: auto;
+	transform: rotate(0deg);
+	transition: transform 2.25s 0.5s ease-out;
+}
+
+#temporality.in .layer4 {
+	transform: rotate(17deg);
+}
+
+#temporality.in .layer5 {
+	transform: rotate(180deg);
+}
+
+/************************/
+/* Intellection *********/
+/************************/
+
+@keyframes rotate {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+#intellection {
+	background-color: #a35638;
+}
+
+#intellection img {
+	position: absolute;
+}
+
+#intellection .layer1 {
+	width: 100%;
+	height: 100%;
+}
+
+#intellection .layer2,
+#intellection .layer3,
+#intellection .layer4 {
+	top: 1%;
+	left: 1%;
+	height: 43.75%;
+	width: 43.75%;
+}
+
+#intellection .layer2,
+#intellection .layer3 {
+	opacity: 1;
+	transition: opacity 1s 1.5s ease-out;
+}
+
+#intellection .layer2 {
+	animation: rotate 6s linear infinite;
+}
+
+#intellection .layer3 {
+	animation: rotate 4s linear infinite;
+}
+
+#intellection.in .layer2,
+#intellection.in .layer3 {
+	opacity: 0;
+}
+
+#intellection .layer4 {
+	transition: transform 2s 1.5s ease-in-out;
+}
+
+#intellection.in .layer4 {
+	transform: translate(40%, 150%) rotate(-20deg);
+}
