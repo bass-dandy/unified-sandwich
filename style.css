@@ -46,6 +46,11 @@ section .picture-frame {
 	transition: opacity 0.5s ease-out;
 }
 
+section .picture-frame img {
+	user-select: none;
+	pointer-events: none;
+}
+
 section .picture-frame-content {
 	height: 100%;
 	width: 100%;
@@ -106,6 +111,58 @@ section p {
 
 #structure {
 	background-color: #ffeadb;
+}
+
+#structure .layer1,
+#structure .layer2,
+#structure .layer3,
+#structure .layer4,
+#structure .layer5,
+#structure .layer6 {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	transform: translateY(0);
+	transition: transform 1s ease-in-out;
+}
+
+#structure .layer1,
+#structure .layer6 {
+	transition-delay: 1s;
+}
+
+#structure .layer2,
+#structure .layer5 {
+	transition-delay: 1.2s;
+}
+
+#structure .layer3,
+#structure .layer4 {
+	transition-delay: 1.4s;
+}
+
+#structure.in .layer1 {
+	transform: translateY(25%);
+}
+
+#structure.in .layer2 {
+	transform: translateY(15%);
+}
+
+#structure.in .layer3 {
+	transform: translateY(5%);
+}
+
+#structure.in .layer4 {
+	transform: translateY(-5%);
+}
+
+#structure.in .layer5 {
+	transform: translateY(-15%);
+}
+
+#structure.in .layer6 {
+	transform: translateY(-25%);
 }
 
 /************************/
