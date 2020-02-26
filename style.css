@@ -362,7 +362,8 @@ section p {
 	position: absolute;
 }
 
-#intellection .layer1 {
+#intellection .layer1,
+#intellection .layer5 {
 	width: 100%;
 	height: 100%;
 }
