@@ -1,3 +1,5 @@
+document.body.classList.remove('no-js');
+
 const observer = new IntersectionObserver((entries) => {
 	for (let i = 0; i < entries.length; i++) {
 		if (entries[i].isIntersecting) {
