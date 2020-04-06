@@ -1,4 +1,5 @@
 * {
+	font-family: 'Nanum Myeongjo';
 	color: black;
 }
 
@@ -8,33 +9,53 @@ html, body {
 	font-size: 10px;
 }
 
+h1, h2, h3, h4, p {
+	margin: 0;
+	font-weight: normal;
+}
+
 section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 	width: 100vw;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 section .section-content {
 	display: flex;
+	align-items: center;
 	max-width: 1000px;
 }
 
-section .col {
+section:nth-child(odd) .section-content {
+	flex-direction: row-reverse;
+}
+
+section .col:last-child {
 	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 20px;
 }
 
-section .col:first-child .picture-frame {
-	align-self: flex-start;
+section .flex-gutter {
+	flex-basis: 80px;
 }
 
-section .col:last-child .picture-frame {
-	align-self: flex-end;
+@media screen and (max-width: 768px) {
+	section {
+		padding: 20px 10px;
+	}
+	section:nth-child(odd) .section-content,
+	section .section-content {
+		flex-direction: column;
+	}
+	section .col:last-child {
+		max-width: 300px;
+	}
+	section .flex-gutter {
+		flex-basis: 20px;
+	}
 }
 
 section .picture-frame {
@@ -44,6 +65,13 @@ section .picture-frame {
 	overflow: hidden;
 	opacity: 0;
 	transition: opacity 0.5s ease-out;
+}
+
+@media screen and (max-width: 900px) {
+	section .picture-frame {
+		height: 300px;
+		width: 300px;
+	}
 }
 
 section .picture-frame img {
@@ -65,9 +93,6 @@ section.in .picture-frame, section.in .picture-frame-content {
 }
 
 section h1, section h2, section h3, section p {
-	margin: 0;
-	font-family: 'Nanum Myeongjo';
-	font-weight: normal;
 	opacity: 0;
 }
 
@@ -76,19 +101,19 @@ section.in h1, section.in h2, section.in h3, section.in p {
 	opacity: 1;
 }
 
-section h1 {
+h1 {
 	font-size: 4rem;
 	font-weight: bold;
 	transition: opacity 1s ease-out;
 }
 
-section h2 {
+h2, h4 {
 	font-size: 3rem;
 	font-weight: bold;
 	transition: opacity 1s ease-out;
 }
 
-section h3 {
+h3 {
 	font-style: italic;
 	padding-bottom: 2px;
 	font-size: 1.6rem;
@@ -117,10 +142,14 @@ a {
 	color: blue;
 }
 
-#intro .intro-content {
+#intro .intro-content, #outro .outro-content {
 	max-width: 1000px;
-	padding: 20px;
-	box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+	#intro .intro-content, #outro .outro-content {
+		max-width: 300px;
+	}
 }
 
 #intro p {
@@ -449,4 +478,85 @@ a {
 .no-js #intellection .layer4,
 #intellection.in .layer4 {
 	transform: translate(40%, 150%) rotate(-20deg);
+}
+
+/************************/
+/* Outro ****************/
+/************************/
+
+#outro .score {
+	margin-top: 15px;
+	font-size: 1.6rem;
+	text-align: justify;
+	opacity: 0;
+	transition: opacity 1s ease-out;
+}
+
+.no-js #outro .score,
+#outro.in .score {
+	opacity: 1;
+}
+
+.score-bar {
+	margin-bottom: 5px;
+	border: 1px solid black;
+	overflow: hidden;
+}
+
+.score-bar-fill {
+	height: 5px;
+	width: 0%;
+	background-color: red;
+	transition: all 1s ease-out;
+}
+
+.no-js #outro .score-bar-fill,
+#outro.in .score-bar-fill {
+	background-color: black;
+}
+
+#outro .structure-score, #outro .structure-score .score-bar-fill {
+	transition-delay: 0.5s;
+}
+.no-js #outro .structure-score .score-bar-fill,
+#outro.in .structure-score .score-bar-fill {
+	width: 60%;
+}
+
+#outro .composition-score, #outro .composition-score .score-bar-fill {
+	transition-delay: 0.75s;
+}
+.no-js #outro .composition-score .score-bar-fill,
+#outro.in .composition-score .score-bar-fill {
+	width: 70%;
+}
+
+#outro .geometry-score, #outro .geometry-score .score-bar-fill {
+	transition-delay: 1s;
+}
+.no-js #outro .geometry-score .score-bar-fill,
+#outro.in .geometry-score .score-bar-fill {
+	width: 60%;
+}
+
+#outro .temporality-score, #outro .temporality-score .score-bar-fill {
+	transition-delay: 1.25s;
+}
+.no-js #outro .temporality-score .score-bar-fill,
+#outro.in .temporality-score .score-bar-fill {
+	width: 100%;
+}
+
+#outro .intellection-score, #outro .intellection-score .score-bar-fill {
+	transition-delay: 1.5s;
+}
+.no-js #outro .intellection-score .score-bar-fill,
+#outro.in .intellection-score .score-bar-fill {
+	width: 80%;
+}
+
+#footer {
+	padding: 20px;
+	text-align: center;
+	font-size: 1.2rem;
 }
