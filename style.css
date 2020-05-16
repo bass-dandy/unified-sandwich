@@ -161,7 +161,7 @@ a {
 /************************/
 
 #structure {
-	background-color: #ffeadb;
+	background-color: #ffb5a7;
 }
 
 #structure .layer1,
@@ -227,7 +227,7 @@ a {
 /************************/
 
 #composition {
-	background-color: #ffbaba;
+	background-color: #fcd5ce;
 }
 
 #composition .layer1 {
@@ -329,7 +329,7 @@ a {
 /************************/
 
 #geometry {
-	background-color: #678a74;
+	background-color: #f8edeb;
 }
 
 #geometry img {
@@ -369,7 +369,7 @@ a {
 /************************/
 
 #temporality {
-	background-color: #ffeadb;
+	background-color: #f9dcc4;
 }
 
 #temporality img {
@@ -432,7 +432,7 @@ a {
 }
 
 #intellection {
-	background-color: #a35638;
+	background-color: #fec89a;
 }
 
 #intellection img {
@@ -481,7 +481,7 @@ a {
 
 .no-js #intellection .layer4,
 #intellection.in .layer4 {
-	transform: translate(40%, 150%) rotate(-20deg);
+	transform: translate(40%, 152%) rotate(-20deg);
 }
 
 /************************/
