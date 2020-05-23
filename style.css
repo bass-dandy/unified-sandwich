@@ -1,6 +1,7 @@
 * {
 	font-family: 'Nanum Myeongjo';
 	color: black;
+	font-display: block;
 }
 
 html, body {
@@ -18,7 +19,7 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: calc(100vh + 1px) /* +1px fixes firefox bugs */;
 	width: 100vw;
 	padding: 20px;
 	box-sizing: border-box;
