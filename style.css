@@ -1,7 +1,11 @@
+@font-face {
+	font-family: 'Nanum Myeongjo';
+	src: url("nanum-myeongjo-slim.ttf") format("truetype");
+}
+
 * {
 	font-family: 'Nanum Myeongjo';
 	color: black;
-	font-display: block;
 }
 
 html, body {
